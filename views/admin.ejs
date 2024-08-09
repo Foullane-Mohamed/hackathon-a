@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajouter Actualité</title>
+    <style>
+      body{
+        margin: 0;
+        padding: 0;
+      }
+      .navbar {
+    background-color: #385c90;
+    padding: 25px 20px;
+    display: flex;
+    justify-content: start; /* توزيع العناصر بين اليسار واليمين */
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* بدون حواف دائرية */
+}
+
+.navbar a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 12px 25px;
+    margin: 0 15px;
+    border-radius: 50px; /* حواف دائرية للأزرار فقط */
+    background-color: #d1902f;
+    font-weight: bold;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.navbar-right {
+    margin-left: auto; /* دفع الرابط الأخير إلى أقصى اليمين */
+}
+
+.navbar a:hover {
+    background-color: #ffffff;
+    color: #d1902f;
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Form Styles */
+.form {
+    background-color: #ffff; /* Form background color */
+    border: 1px solid #c0d6df;
+    border-radius: 8px;
+    padding: 20px;
+    width: 80%;
+    margin: 40px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.form h2{
+    text-align: center;
+}
+.form label{
+    text-align: left;
+    color: #385c90;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form input[type="text"],
+.form input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #c0d6df;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1em;
+    color: #4f6d7a; /* Input text color */
+    background-color: #ffffff; /* Input background color */
+}
+
+.form input[type="submit"] {
+    width: 100%;
+    background-color: #e38e10 ; /* Submit button background */
+    color: #ffffff; /* Submit button text color */
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form input[type="submit"]:hover {
+    background-color: #d1902f; /* Darker hover color for the submit button */
+}
+.footer {
+    background-color: #2c3e50;
+    color: #ffffff;
+    padding: 40px 20px;
+    font-family: Arial, sans-serif;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 200px;
+    margin: 0 20px;
+}
+
+.footer-section h3 {
+    border-bottom: 2px solid #d1902f;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+.footer-section p {
+    line-height: 1.6;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin: 10px 0;
+}
+
+.footer-section ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: #d1902f;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #34495e;
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-size: 14px;
+}
+
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="/modifactualite">Modifier Actualité</a>
+        <a href="/evenement">Ajouter Événement</a>
+        <a href="/liste-des-candidatures">Liste des Candidatures</a>
+        <a href="/login" class="navbar-right">Déconnexion</a>
+    </div>
+   <div class="form">
+    <h2>Ajouter  actuialité</h2>
+    <form action="/actuialite" method="post" enctype="multipart/form-data">
+        <label for=""> Titre d'Actuialité</label>
+        <input type="text" id="titre" name="titre" placeholder="Titre">
+        <label for=""> Discription d'Actuialité</label>
+        <input type="text" id="discription" name="discription" placeholder="Description">
+        <label for=""> Fiche d'Actualité</label>
+        <input type="file" id="imgActulaite" name="imgActulaite" accept="image/*">
+        <input type="submit" value="Enregistrer">
+    </form>
+</div>
+<footer class="footer">
+  <div class="footer-content">
+      <div class="footer-section about">
+          <h3>SAM Project</h3>
+          <p>
+              SAM Project est une initiative innovante dédiée à l'agriculture, offrant des solutions et des outils spécialement conçus pour le secteur agricole. Cet événement met en lumière les dernières avancées et meilleures pratiques dans le domaine, tout en facilitant les échanges entre professionnels et experts. Rejoignez-nous pour découvrir comment SAM Project peut transformer vos pratiques agricoles et améliorer vos résultats.
+          </p>
+      </div>
+      <div class="footer-section links">
+          <h3>Liens rapides</h3>
+          <ul>
+              <li><a href="#evenement">Evenement</a></li>
+              <li><a href="#contact">Contactez-nous</a></li>
+              <li><a href="#map">Map</a></li>
+          </ul>
+      </div>
+      <div class="footer-section news">
+          <h3>Dernières nouvelles</h3>
+          <ul>
+              <li><a href="#revolution-durable">Révolution Durable en Mécanisation</a> - 02-08 Août 2024</li>
+              <li><a href="#mecanisation-durable">Mécanisation Durable : Vers l’Avenir</a> - 10-14 septembre 2024</li>
+              <li><a href="#futur-agriculture">Futur de l'Agriculture</a> - 23-25 Août 2024</li>
+          </ul>
+      </div>
+      <div class="footer-section tags">
+          <h3>Etiquettes</h3>
+          <ul>
+              <li><a href="#agriculture">Agriculture</a></li>
+              <li><a href="#technologie">Technologie</a></li>
+              <li><a href="#ocp">OCP</a></li>
+              <li><a href="#almoutmir">Almoutmir</a></li>
+              <li><a href="#youcode">YouCode</a></li>
+              <li><a href="#safi">Safi</a></li>
+              <li><a href="#evenement">Evenement</a></li>
+              <li><a href="#techagri">TechAgri</a></li>
+    
+              <li><a href="#agritech">AgriTech</a></li>
+              <li><a href="#ticket">Ticket</a></li>
+              <li><a href="#innovation">InnovationFermière</a></li>
+              <li><a href="#agriculture2024">Agriculture2024</a></li>
+              <li><a href="#speakers">Speakers</a></li>
+              <li><a href="#futur-de-l-agriculture">FuturDeLAgriculture</a></li>
+          </ul>
+      </div>
+  </div>
+  <div class="footer-bottom">
+      <p>Copyright ©2024 Hackathon. All Rights Reserved</p>
+  </div>
+</footer>
+</body>
+</html>
